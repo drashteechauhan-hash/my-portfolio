@@ -180,12 +180,9 @@ const projects = [
   },
   {
     num: "02", emoji: "🌐", bg: "linear-gradient(135deg, #2e1a0a, #5a3010)",
-    title: "Portfolio Website", isLive: false,
-    liveUrl: null,
-    // ✏️ PORTFOLIO GITHUB LINK YAHAN DAALNA:
-    // Jab tu GitHub pe portfolio upload kare, tab yahan apna link paste karna
-    // Example: githubUrl: "https://github.com/drashteechauhan-hash/my-portfolio"
-    githubUrl: null,
+    title: "Portfolio Website", isLive: true,
+    liveUrl: "https://drashtee-portfolio.netlify.app",
+    githubUrl: "https://github.com/drashteechauhan-hash/my-portfolio",
     desc: "This personal portfolio built with React showcasing my projects, certifications, achievements and skills.",
     tags: ["React", "CSS", "Netlify"],
   },
@@ -341,7 +338,7 @@ export default function Portfolio() {
                     {p.liveUrl && <a href={p.liveUrl} target="_blank" className="proj-link">View Live →</a>}
                     {p.githubUrl
                       ? <a href={p.githubUrl} target="_blank" className="proj-link" style={{color:"var(--muted)"}}>GitHub →</a>
-                      : <span className="proj-link-muted">GitHub (add karni link)</span>
+                      : <span className="proj-link-muted">GitHub </span>
                     }
                   </div>
                 </div>
@@ -412,7 +409,7 @@ export default function Portfolio() {
             */}
             <a href="mailto:APNA_EMAIL_YAHAN@gmail.com" className="contact-row">
               <span className="contact-icon">✉️</span>
-              <span className="contact-txt">drashteechauhan@gmail.com ← update karo</span>
+              <span className="contact-txt">drashteechauhan@gmail.com </span>
             </a>
             <a href="https://github.com/drashteechauhan-hash" target="_blank" className="contact-row">
               <span className="contact-icon">🐙</span>
