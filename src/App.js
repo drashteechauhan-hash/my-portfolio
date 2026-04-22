@@ -186,6 +186,22 @@ const projects = [
     desc: "This personal portfolio built with React showcasing my projects, certifications, achievements and skills.",
     tags: ["React", "CSS", "Netlify"],
   },
+  {
+    num: "03", emoji: "🎓", bg: "linear-gradient(135deg, #1a1a2e, #16213e)",
+    title: "Student AI System", isLive: false,
+    liveUrl: null,
+    githubUrl: null,
+    desc: "ML-powered web app predicting student academic performance and risk levels. Features analytics dashboard, study plan recommendations and what-if analysis.",
+    tags: ["Python", "FastAPI", "React", "ML"],
+  },
+  {
+    num: "04", emoji: "🛡️", bg: "linear-gradient(135deg, #2e0a0a, #5a1010)",
+    title: "PhiShield", isLive: false,
+    liveUrl: null,
+    githubUrl: "https://github.com/bhoomi2060-dot/scam-detector",
+    desc: "Flutter mobile app detecting phishing SMS, emails and URLs in real time. Trained Random Forest & Naive Bayes on 240,000+ samples achieving 99.9% accuracy.",
+    tags: ["Python", "Flutter", "Flask", "MySQL", "ML"],
+  },
 ];
 
 const achievements = [
@@ -282,7 +298,7 @@ export default function Portfolio() {
                 Step 3: Neeche href="" ke andar woh link paste karo
               */}
               <a
-                href="YAHAN_APNA_CV_DRIVE_LINK_DAALO"
+                href="https://drive.google.com/file/d/15mow2sFLjHVfYwRw1ZrjxwIpaa1KJoD-/view?usp=sharing"
                 target="_blank"
                 className="cv-btn"
               >
