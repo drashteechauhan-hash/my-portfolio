@@ -1,11 +1,5 @@
 import { useEffect, useRef } from "react";
 
-// ✏️ STEP 1: Put your photo file (drashtee.jpg) inside the src/ folder
-// ✏️ STEP 2: Uncomment the line below:
-// import myPhoto from './drashtee.jpg';
-
-// ✏️ OR if you put it in public/ folder, just use src="/drashtee.jpg" directly in the <img> tag below
-
 const style = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
@@ -61,51 +55,12 @@ const style = `
     text-transform: uppercase; border: 1px solid var(--border); cursor: pointer;
     text-decoration: none; display: inline-block; transition: all 0.3s; }
   .btn-line:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
-
-  /* ===== HERO RIGHT: PHOTO + STATS ===== */
-  .hero-right { position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
-    display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
-  .hero-photo-wrap { position: relative; width: 260px; }
-  .hero-photo-wrap::before {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    border: 1px solid var(--accent);
-    opacity: 0.35;
-    pointer-events: none;
-  }
-  .hero-photo-wrap::after {
-    content: '';
-    position: absolute;
-    inset: -16px;
-    border: 1px solid var(--gold);
-    opacity: 0.18;
-    pointer-events: none;
-  }
-  .hero-photo {
-    width: 260px;
-    height: 320px;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    filter: sepia(8%) contrast(1.05);
-    transition: filter 0.4s;
-  }
-  .hero-photo:hover { filter: sepia(0%) contrast(1.08); }
-  .hero-photo-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 0.75rem;
-  }
-  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; }
-  .stat-card { padding: 1.25rem 1rem; background: var(--surface); border: 1px solid var(--border); transition: all 0.3s; text-align: center; }
+  .hero-right { position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards; }
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .stat-card { padding: 2rem 1.5rem; background: var(--surface); border: 1px solid var(--border); transition: all 0.3s; }
   .stat-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--accent); line-height: 1; }
-  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--accent); line-height: 1; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.5rem; }
 
   section { padding: 7rem 6vw; }
   .sec-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
@@ -266,7 +221,7 @@ const certs = [
   { issuer: "Google Cloud × MRU", name: "Digital Campus 2.0 — HackSprint Participation", date: "Aug 2025", link: "https://drive.google.com/file/d/18q5FqF9DxaK1cd9OFjBh7LCyNCE2rKM9/view?usp=drive_link" },
   { issuer: "IIC MRU", name: "SIH Avishkar Hackathon — Participation Certificate", date: "Sep 2025", link: "https://drive.google.com/file/d/1-eIzH_WGma1-dwbi_lKQHDGt4hqiB6c5/view?usp=drive_link" },
   { issuer: "IETE Students Forum, MRU", name: "Idea Hack 2025 — Certificate of Appreciation", date: "Oct 2025", link: "https://drive.google.com/file/d/1hiDhYWob4BGYGFEQ2pYPOVCvWdIECoi2/view?usp=drive_link" },
-  { issuer: "INNOSKILL 2026, MRU", name: "Code Debugging — Certificate of Appreciation", date: "Apr 2026", link: "https://drive.google.com/file/d/1Lbz_4JxFuvP8tESMNaC7URCSaQc91hXw/view?usp=drive_link" },
+  { issuer: "INNOSKILL 2026, MRU", name: "Code Debugging — Certificate of Appreciation", date: "Apr 2026", link: "https://drive.google.com/file/d/1Lbz_4JxFuvP8tESMNaM7URCSaQc91hXw/view?usp=drive_link" },
   { issuer: "SHEOWS NGO", name: "Social Internship Certificate", date: "Jul 2025", link: "https://drive.google.com/file/d/1iiu4nX7e3VOANH_OfBybaVD_NamMuwwg/view?usp=drive_link" },
   { issuer: "Hackmore", name: "Volunteer Certificate", date: "2025", link: "https://drive.google.com/file/d/1imLvDaw8eKxxbVmgGdIT4tvqjEjWAxep/view?usp=drive_link" },
   { issuer: "Altair / RapidMiner", name: "Altair Contest Certificate", date: "2025", link: "https://drive.google.com/file/d/1SC4DXDTWc2ahoP8FY5LBp7O_X1pQHz24/view?usp=drive_link" },
@@ -314,32 +269,7 @@ export default function Portfolio() {
             <a href="https://www.linkedin.com/in/drashtee-singh-chauhan-11829b323" target="_blank" className="btn-line">LinkedIn</a>
           </div>
         </div>
-
-        {/* ===== HERO RIGHT: PHOTO + STATS ===== */}
         <div className="hero-right">
-          <div className="hero-photo-wrap">
-            {/*
-              ✏️ HOW TO ADD YOUR PHOTO — choose ONE method:
-
-              METHOD A (Recommended — put photo in src/ folder):
-                1. Copy your photo into: src/drashtee.jpg
-                2. Add this import at the TOP of the file (line 6):
-                   import myPhoto from './drashtee.jpg';
-                3. Change src below to: src={myPhoto}
-
-              METHOD B (put photo in public/ folder):
-                1. Copy your photo into: public/drashtee.jpg
-                2. Change src below to: src="/drashtee.jpg"
-                   (no import needed)
-            */}
-            <img
-              className="hero-photo"
-              src="/drashtee.jpg"
-              alt="Drashtee Singh Chauhan"
-            />
-            <div className="hero-photo-label">Drashtee Singh Chauhan</div>
-          </div>
-
           <div className="hero-stats">
             <div className="stat-card"><div className="stat-num">11</div><div className="stat-label">Certificates</div></div>
             <div className="stat-card"><div className="stat-num">3</div><div className="stat-label">Hackathons</div></div>
@@ -357,8 +287,16 @@ export default function Portfolio() {
             <h2 className="sec-title">Passionate coder,<br />lifelong learner</h2>
             <p>Hi! I'm Drashtee, a B.Tech Computer Science student at Manav Rachna University, Faridabad. I love building things that matter — from full-stack web apps to AI/ML projects.</p>
             <p>I've participated in hackathons like SIH and Google Cloud HackSprint, completed an AI/ML mentorship, and did a social internship at an NGO. I believe tech should solve real problems.</p>
+
+            {/* ===== CV BUTTON ===== */}
             <div className="cv-banner">
               <span className="cv-text">📄 My CV / Resume</span>
+              {/*
+                ✏️ CV LINK: Apna CV Google Drive pe upload kar, link yahan daalna:
+                Step 1: drive.google.com → apna CV upload karo
+                Step 2: File pe right click → Share → Anyone with link → Copy link
+                Step 3: Neeche href="" ke andar woh link paste karo
+              */}
               <a
                 href="https://drive.google.com/file/d/1lG_BAyTucO-n4UmDnvNz1Z09PEAzdQD8/view?usp=sharing"
                 target="_blank"
@@ -446,7 +384,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* CERTIFICATIONS */}
+      {/* CERTIFICATIONS — click karo to open */}
       <section id="certifications">
         <div ref={addRef} className="reveal">
           <div className="sec-label">Credentials</div>
@@ -481,9 +419,13 @@ export default function Portfolio() {
               <span className="contact-icon">💼</span>
               <span className="contact-txt">linkedin.com/in/drashtee-singh-chauhan</span>
             </a>
-            <a href="mailto:drashteechauhan@gmail.com" className="contact-row">
+            {/*
+              ✏️ EMAIL: Apna Gmail yahan daalna
+              href="mailto:tera-actual-email@gmail.com"
+            */}
+            <a href="mailto:APNA_EMAIL_YAHAN@gmail.com" className="contact-row">
               <span className="contact-icon">✉️</span>
-              <span className="contact-txt">drashteechauhan@gmail.com</span>
+              <span className="contact-txt">drashteechauhan@gmail.com </span>
             </a>
             <a href="https://github.com/drashteechauhan-hash" target="_blank" className="contact-row">
               <span className="contact-icon">🐙</span>
